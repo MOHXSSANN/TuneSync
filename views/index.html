@@ -1,0 +1,111 @@
+<!DOCTYPE html>searchResultsHeader
+<html lang="en">
+<head>
+    <!-- Meta Tags: Essential for proper rendering and mobile responsiveness. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title: Sets the title of the webpage, displayed in the browser tab. -->
+    <title>Song Playlist and Search</title>
+
+    <!-- External Stylesheet: Link to an external CSS file for additional styles. -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Google Font: Imports the 'Roboto' font style from Google Fonts. -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!-- Inline Styles: Defines CSS styles directly within the HTML document. -->
+    <style>
+        .container {
+            /* Container Style: Sets the width and horizontal margin for centering. */
+            width: 80%;
+            margin: auto;
+        }
+        .playlist-area, .search-results-area, .input-area {
+            /* Common Styles: Applies to playlist, search results, and input areas. */
+            margin-bottom: 20px;
+            border: 1px solid #854abd;
+            padding: 10px;
+        }
+        table {
+            /* Table Style: Sets table width, border style, and collapse behavior. */
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #333;
+        }
+        th, td {
+            /* Table Header and Data Cell Styles: Sets border, padding, and text alignment. */
+            border: 2px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        tr:hover {
+            /* Row Hover Effect: Changes background color when hovering over a table row. */
+            background-color: #f1f1f1;
+        }
+        th {
+            /* Table Header Style: Sets background color, text color, and text shadow. */
+            background-color: #854abd;
+            color: white;
+            text-shadow: 1px 1px 2px #000;
+        }
+        button {
+            /* Button Style: Sets cursor, background color, border, padding, border radius, and transition effect. */
+            cursor: pointer;
+            background-color: #333333;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            /* Button Hover Effect: Changes background color when hovering over a button. */
+            background-color: #38ada9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Playlist Area: Displays the user's current playlist. -->
+        <div class="playlist-area">
+            <h2>Playlist</h2>
+            <table id="playlistData">
+                <!-- Table Headers: Defines columns for actions, title, artist, and artwork. -->
+                <tr>
+                    <th>Actions</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Artwork</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="input-area">
+            <div class="wrapper">
+                <label for="title">Enter Song Title:</label>
+                <input type="text" id="title" />
+                <button id="submit_button">Submit</button>
+            </div>
+        </div>
+
+        <div class="search-results-area">
+            <h2 id="searchResultsHeader">Songs matching: <span id="searchQuery"></span></h2>
+            <table id="searchResultsData">
+                <!-- Table Headers: Defines columns for adding to playlist, title, artist, and artwork. -->
+                <tr>
+                    <th>Add</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Artwork</th>
+                </tr>
+                <!-- Search Results Rows: Search results will be dynamically added here. -->
+            </table>
+        </div>
+        <!-- Data Display Area: Hidden area used for dynamic content updates (e.g., AJAX responses). -->
+        <div id="data"></div>
+    </div>
+
+    <!-- JavaScript Link: Connects an external JavaScript file for interactivity and functionality. -->
+    <script src="js/script.js"></script>
+</body>
+</html>
